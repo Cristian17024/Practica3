@@ -1,13 +1,21 @@
 #BlueJ class context
 comment0.target=Libro
 comment1.params=titulo\ autor\ a\u00F1oPublicacion\ isbn
-comment1.target=Libro(java.lang.String,\ java.lang.String,\ int,\ java.lang.String)
+comment1.target=Libro(java.lang.String,\ Autor,\ int,\ java.lang.String)
 comment2.params=
-comment2.target=boolean\ esAntiguo()
+comment2.target=java.lang.String\ getTitulo()
 comment3.params=
-comment3.target=java.lang.String\ getInformacion()
+comment3.target=Autor\ getAutor()
 comment4.params=
-comment4.target=java.lang.String\ getTitulo()
+comment4.target=int\ getA\u00F1oPublicacion()
 comment5.params=
-comment5.target=java.lang.String\ toString()
-numComments=6
+comment5.target=java.lang.String\ getIsbn()
+comment6.params=
+comment6.target=boolean\ isPrestado()
+comment7.params=prestado
+comment7.target=void\ setEsPrestado(boolean)
+comment8.params=
+comment8.target=boolean\ esAntiguo()
+comment9.params=
+comment9.target=java.lang.String\ obtenerInformacion()
+numComments=10

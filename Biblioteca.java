@@ -1,8 +1,10 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class Biblioteca {
-    private ArrayList<Libro> libros;
+    private List<Libro> libros;
 
+    // Se inicia la lista
     public Biblioteca() {
         libros = new ArrayList<>();
     }
@@ -11,31 +13,36 @@ public class Biblioteca {
         libros.add(libro);
     }
 
-    public void mostrarLibros() {
-        for (Libro libro : libros) {
-            System.out.println(libro.getInformacion());
-        }
-    }
-
-    public void buscarLibroPorTitulo(String titulo) {
-        boolean encontrado = false;
+    public Libro buscarLibroPorTitulo(String titulo) {
         for (Libro libro : libros) {
             if (libro.getTitulo().equalsIgnoreCase(titulo)) {
-                System.out.println(libro.getInformacion());
-                encontrado = true;
-                break;
+                return libro;
             }
         }
-        if (!encontrado) {
-            System.out.println("No se encontro true libeo");
-        }
+        return null;
     }
 
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
+    public List<Libro> obtenerLibros() {
+        return libros;
+    }
+
+    public List<Libro> obtenerLibrosPrestados() {
+        List<Libro> librosPrestados = new ArrayList<>();
         for (Libro libro : libros) {
-            sb.append(libro.toString()).append("\n");
+            if (libro.isPrestado()) { 
+                librosPrestados.add(libro);
+            }
         }
-        return sb.toString();
+        return librosPrestados;
+    }
+
+    public List<Libro> obtenerLibrosNoPrestados() {
+        List<Libro> librosNoPrestados = new ArrayList<>();
+        for (Libro libro : libros) {
+            if (!libro.isPrestado()) {
+                librosNoPrestados.add(libro);
+            }
+        }
+        return librosNoPrestados;
     }
 }
